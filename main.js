@@ -26,46 +26,49 @@
     {
       mediaHeading: 'Brakes',
       itemDescription: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor',
-      itemPrice: 250.00
+      itemPrice: 250.00,
     },
     {
       mediaHeading: 'Filters',
       itemDescription: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor',
-      itemPrice: 100.00
+      itemPrice: 100.00,
     },
     {
     mediaHeading: 'Wheels',
     itemDescription: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor',
-    itemPrice: 500.00
+    itemPrice: 500.00,
     }
   ]
 
-function renderPost(post) {
-  var $container = document.createElement('div')
-  var $media = document.createElement('div')
-  var $href = document.createElement('div')
-  var $mediaBody = document.createElement('div')
-  var $mediaHeading = document.createElement('div')
-  var $itemDescription = document.createElement('p')
-  var $itemPrice = document.createElement('span')
+  function renderPost(container) {
+    var $container = document.createElement('div')
+    var $media = document.createElement('div')
+    var $href = document.createElement('div')
+    var $mediaBody = document.createElement('div')
+    var $mediaHeading = document.createElement('div')
+    var $itemDescription = document.createElement('p')
+    var $itemPrice = document.createElement('span')
 
-  $media.textContent = post.media
-  $href.textContent = post.href
-  $mediaBody.textContent = post.mediaBody
-  $mediaHeading.textContent = post.mediaHeading
-  $itemDescription.textContent = post.itemDescription
-  $itemPrice.textContent = post.itemPrice
+    $media.textContent = container.media
+    $href.textContent = container.href
+    $mediaBody.textContent = container.mediaBody
+    $mediaHeading.textContent = container.mediaHeading
+    $itemDescription.textContent = container.itemDescription
+    $itemPrice.textContent = container.itemPrice
 
-  $post.appendchild($media)
-  $post.appendchild($href)
-  $post.appendchild($mediaBody)
-  $post.appendchild($mediaheading)
-  $post.appendchild($itemDescription)
-  $post.appendchild($itemPrice)
+    $container.appendchild($media)
+    $container.appendchild($href)
+    $container.appendchild($mediaBody)
+    $container.appendchild($mediaheading)
+    $container.appendchild($itemDescription)
+    $container.appendchild($itemPrice)
+
+    return $container
+
 
   }
 
-items.forEach(function(item){
-  document.body.appendchild(renderPost(item))
+items.forEach(function (item) {
+  document.body.appendChild(renderPost(item))
 }
 )
