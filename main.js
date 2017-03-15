@@ -26,49 +26,75 @@
     {
       mediaHeading: 'Brakes',
       itemDescription: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor',
-      itemPrice: 250.00,
+      itemPrice: '$250.00 each',
+      button: 'add to cart'
     },
     {
       mediaHeading: 'Filters',
       itemDescription: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor',
-      itemPrice: 100.00,
+      itemPrice: '$100.00 each',
+      button: 'add to cart'
     },
     {
     mediaHeading: 'Wheels',
     itemDescription: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor',
-    itemPrice: 500.00,
+    itemPrice: '$500.00 each',
+    button: 'add to cart'
     }
   ]
 
   function renderPost(container) {
     var $container = document.createElement('div')
     var $media = document.createElement('div')
-    var $href = document.createElement('div')
+    var $mediaLeft = document.createElement('div')
+    var $a = document.createElement('a')
+    var $img = document.createElement('img')
     var $mediaBody = document.createElement('div')
-    var $mediaHeading = document.createElement('div')
+    var $mediaHeading = document.createElement('h4')
     var $itemDescription = document.createElement('p')
     var $itemPrice = document.createElement('span')
+    var $buttonGroup = document.createElement('div')
+    var $button = document.createElement('button')
 
     $media.textContent = container.media
-    $href.textContent = container.href
+    $mediaLeft.textContent = container.mediaLeft
+    $a.textContent = container.a
+    $img.textContent = container.img
     $mediaBody.textContent = container.mediaBody
     $mediaHeading.textContent = container.mediaHeading
     $itemDescription.textContent = container.itemDescription
     $itemPrice.textContent = container.itemPrice
+    $buttonGroup.textContent = container.buttonGroup
+    $button.textContent = container.button
 
-    $container.appendchild($media)
-    $container.appendchild($href)
-    $container.appendchild($mediaBody)
-    $container.appendchild($mediaheading)
-    $container.appendchild($itemDescription)
-    $container.appendchild($itemPrice)
+    $container.classList.add('container')
+    $media.classList.add('media')
+    $mediaLeft.classList.add('media-left')
+    $a.classList.add('a')
+    $img.classList.add('img')
+    $mediaBody.classList.add('media-body')
+    $mediaHeading.classList.add('media-heading')
+    $itemPrice.classList.add('price')
+    $buttonGroup.classList.add('btn-group')
+    $button.classList.add('btnbtn-default')
+
+    //$img.setAttribute(src, 'brakes.jpg')
+
+
+    $container.appendChild($media)
+    $container.appendChild($mediaLeft)
+    $container.appendChild($a)
+    $container.appendChild($img)
+    $container.appendChild($mediaBody)
+    $container.appendChild($mediaHeading)
+    $container.appendChild($itemDescription)
+    $container.appendChild($itemPrice)
+    $container.appendChild($buttonGroup)
+    $container.appendChild($button)
 
     return $container
-
-
   }
 
 items.forEach(function (item) {
   document.body.appendChild(renderPost(item))
-}
-)
+})
