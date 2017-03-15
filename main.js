@@ -91,6 +91,7 @@
   items.forEach(function (item) {
     document.body.appendChild(renderPost(item))
     document.querySelector('.container')
-    var =
+    var $item = document.querySelector('.container')
+    $item.textContent = item
 
   })
