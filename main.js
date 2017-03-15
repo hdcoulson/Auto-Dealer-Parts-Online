@@ -56,11 +56,6 @@
     var $buttonGroup = document.createElement('div')
     var $button = document.createElement('button')
 
-    $media.textContent = container.media
-    $mediaLeft.textContent = container.mediaLeft
-    $a.textContent = container.a
-    $img.textContent = container.img
-    $mediaBody.textContent = container.mediaBody
     $mediaHeading.textContent = container.mediaHeading
     $itemDescription.textContent = container.itemDescription
     $itemPrice.textContent = container.itemPrice
@@ -77,7 +72,7 @@
     $buttonGroup.classList.add('btn-group')
     $button.classList.add('btnbtn-default')
 
-    $img.setAttribute('src', items.photo[i])
+    $img.setAttribute('src', container.photo)
 
     $media.appendChild($mediaLeft)
     $media.appendChild($mediaBody)
