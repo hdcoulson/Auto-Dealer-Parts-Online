@@ -27,16 +27,19 @@
       mediaHeading: 'Brakes',
       itemDescription: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
       itemPrice: '$250.00 each ',
+      photo: 'brakes.jpg',
     },
     {
       mediaHeading: 'Filters',
       itemDescription: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
       itemPrice: '$100.00 each ',
+      photo: 'filter.jpg',
     },
     {
     mediaHeading: 'Wheels',
     itemDescription: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
     itemPrice: '$500.00 each ',
+    photo: 'wheel.jpg',
     }
   ]
 
@@ -74,7 +77,7 @@
     $buttonGroup.classList.add('btn-group')
     $button.classList.add('btnbtn-default')
 
-    $img.setAttribute('src', 'brakes.jpg')
+    $img.setAttribute('src', items.photo[i])
 
     $media.appendChild($mediaLeft)
     $media.appendChild($mediaBody)
