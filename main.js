@@ -19,7 +19,6 @@
     }
   ]
 
-
   function renderPost(container) {
     var $media = document.createElement('div')
     var $mediaLeft = document.createElement('div')
