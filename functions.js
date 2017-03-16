@@ -8,13 +8,15 @@ function renderPost(container) {
   var $itemDescription = document.createElement('p')
   var $itemPrice = document.createElement('span')
   var $buttonGroup = document.createElement('div')
-  var $button = document.createElement('button')
+  var $cartButton = document.createElement('button')
+  var $detailsButton = document.createElement('button')
 
   $mediaHeading.textContent = container.mediaHeading
   $itemDescription.textContent = container.itemDescription
   $itemPrice.textContent = container.itemPrice
   $buttonGroup.textContent = container.buttonGroup
-  $button.textContent = 'Add to cart'
+  $cartButton.textContent = 'Add to cart'
+  $detailsButton.textContent = 'Details...'
 
   $media.classList.add('media')
   $mediaLeft.classList.add('media-left')
@@ -24,7 +26,8 @@ function renderPost(container) {
   $mediaHeading.classList.add('media-heading')
   $itemPrice.classList.add('price')
   $buttonGroup.classList.add('btn-group')
-  $button.classList.add('btnbtn-default')
+  $cartButton.classList.add('btnbtn-default')
+  $detailsButton.classList.add('btnbtn-default')
 
   $img.setAttribute('src', container.photo)
 
@@ -36,7 +39,8 @@ function renderPost(container) {
   $mediaBody.appendChild($itemDescription)
   $mediaBody.appendChild($itemPrice)
   $mediaBody.appendChild($buttonGroup)
-  $buttonGroup.appendChild($button)
+  $buttonGroup.appendChild($detailsButton)
+  $buttonGroup.appendChild($cartButton)
 
   return $media
 }
