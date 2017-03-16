@@ -39,6 +39,7 @@ function renderPost(container) {
   $buttonGroup.setAttribute('id', container.id)
   $cartButton.setAttribute('id', container.id)
   $detailsLink.setAttribute('id', container.id)
+  $itemDescription.setAttribute('id', container.id)
   $detailsLink.setAttribute('href', '#')
 
   $media.appendChild($mediaLeft)
