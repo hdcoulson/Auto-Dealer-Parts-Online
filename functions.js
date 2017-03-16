@@ -31,8 +31,15 @@ function renderPost(container) {
 
   $img.setAttribute('src', container.photo)
   $media.setAttribute('id', container.id)
+  $mediaLeft.setAttribute('id', container.id)
+  $mediaBody.setAttribute('id', container.id)
+  $img.setAttribute('id', container.id)
+  $mediaHeading.setAttribute('id', container.id)
+  $itemPrice.setAttribute('id', container.id)
+  $buttonGroup.setAttribute('id', container.id)
+  $cartButton.setAttribute('id', container.id)
+  $detailsLink.setAttribute('id', container.id)
   $detailsLink.setAttribute('href', '#')
-  $detailsLink.setAttribute('id', 'detailsLink')
 
   $media.appendChild($mediaLeft)
   $media.appendChild($mediaBody)
@@ -53,9 +60,7 @@ items.forEach(function (item) {
   $item.appendChild(document.body.appendChild(renderPost(item)))
 })
 
-var $detailsLink = document.querySelector('detailsLink')
-
 document.addEventListener('click', function() {
-  console.log(event.target.getAttribute('id'))
+  console.log(event.target.id)
 
 })
