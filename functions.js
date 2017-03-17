@@ -57,8 +57,8 @@ function renderPost(container) {
 }
 
 items.forEach(function (item) {
-  var $item = document.querySelector('.container')
-  $item.appendChild(document.body.appendChild(renderPost(item)))
+  var $listView = document.querySelector('#listView')
+  $listView.appendChild(renderPost(item))
 })
 
 document.addEventListener('click', function() {
@@ -73,11 +73,16 @@ document.addEventListener('click', function() {
     })
     return $matches
   }
-  console.log(getMatches(items))
+
+  var matches = getMatches(items)
+  var $matchedItem = renderSelectedItem(matches[0])
+  var $detailsView = document.querySelector('#detailsView')
+  $detailsView.appendChild($matchedItem)
+
 })
 
 
-/*function renderSelectedItem (TBD) {
+function renderSelectedItem (item) {
   var $media = document.createElement('div')
   var $mediaLeft = document.createElement('div')
   var $a = document.createElement('a')
@@ -89,10 +94,10 @@ document.addEventListener('click', function() {
   var $buttonGroup = document.createElement('div')
   var $cartButton = document.createElement('button')
 
-  $mediaHeading.textContent = container.mediaHeading
-  $itemDescription.textContent = container.itemDescription
-  $itemPrice.textContent = container.itemPrice
-  $buttonGroup.textContent = container.buttonGroup
+  $mediaHeading.textContent = item.mediaHeading
+  $itemDetails.textContent = item.itemDetails
+  $itemPrice.textContent = item.itemPrice
+  $buttonGroup.textContent = item.buttonGroup
   $cartButton.textContent = 'Add to cart'
 
   $media.classList.add('media')
@@ -105,17 +110,16 @@ document.addEventListener('click', function() {
   $buttonGroup.classList.add('btn-group')
   $cartButton.classList.add('btnbtn-default')
 
-  $img.setAttribute('src', container.photo)
-  $media.setAttribute('id', container.id)
-  $mediaLeft.setAttribute('id', container.id)
-  $mediaBody.setAttribute('id', container.id)
-  $img.setAttribute('id', container.id)
-  $mediaHeading.setAttribute('id', container.id)
-  $itemPrice.setAttribute('id', container.id)
-  $buttonGroup.setAttribute('id', container.id)
-  $cartButton.setAttribute('id', container.id)
-  $detailsLink.setAttribute('id', container.id)
-  $itemDescription.setAttribute('id', container.id)
+  $img.setAttribute('src', item.photo)
+  $media.setAttribute('id', item.id)
+  $mediaLeft.setAttribute('id', item.id)
+  $mediaBody.setAttribute('id', item.id)
+  $img.setAttribute('id', item.id)
+  $mediaHeading.setAttribute('id', item.id)
+  $itemPrice.setAttribute('id', item.id)
+  $buttonGroup.setAttribute('id', item.id)
+  $cartButton.setAttribute('id', item.id)
+  $itemDescription.setAttribute('id', item.id)
   $detailsLink.setAttribute('href', '#')
 
   $media.appendChild($mediaLeft)
@@ -129,4 +133,4 @@ document.addEventListener('click', function() {
   $buttonGroup.appendChild($cartButton)
 
   return $media
-*/
+}
