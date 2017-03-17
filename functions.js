@@ -62,6 +62,15 @@ items.forEach(function (item) {
 })
 
 document.addEventListener('click', function() {
-  console.log(event.target.id)
+  var $clickedItem = event.target.id
+
+  function getMatches(allItems) {
+    var $matches = [0]
+    allItems.forEach(function (items) {
+      if(items.id === $clickedItem)
+      matches.push(item)
+    })
+    console.log($matches)
+  }
 
 })
