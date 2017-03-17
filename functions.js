@@ -64,13 +64,69 @@ items.forEach(function (item) {
 document.addEventListener('click', function() {
   var $clickedItem = event.target.id
 
-  function getMatches(allItems) {
-    var $matches = [0]
+  function getMatches(item) {
+    var $matches = []
     allItems.forEach(function (items) {
-      if(items.id === $clickedItem)
-      matches.push(item)
+      if(items.id === $clickedItem) {
+      matches.push(items)
+    }
     })
     console.log($matches)
   }
 
 })
+
+
+/*function renderSelectedItem (TBD) {
+  var $media = document.createElement('div')
+  var $mediaLeft = document.createElement('div')
+  var $a = document.createElement('a')
+  var $img = document.createElement('img')
+  var $mediaBody = document.createElement('div')
+  var $mediaHeading = document.createElement('h4')
+  var $itemDetails = document.createElement('p')
+  var $itemPrice = document.createElement('span')
+  var $buttonGroup = document.createElement('div')
+  var $cartButton = document.createElement('button')
+
+  $mediaHeading.textContent = container.mediaHeading
+  $itemDescription.textContent = container.itemDescription
+  $itemPrice.textContent = container.itemPrice
+  $buttonGroup.textContent = container.buttonGroup
+  $cartButton.textContent = 'Add to cart'
+
+  $media.classList.add('media')
+  $mediaLeft.classList.add('media-left')
+  $a.classList.add('a')
+  $img.classList.add('media-object')
+  $mediaBody.classList.add('media-body')
+  $mediaHeading.classList.add('media-heading')
+  $itemPrice.classList.add('price')
+  $buttonGroup.classList.add('btn-group')
+  $cartButton.classList.add('btnbtn-default')
+
+  $img.setAttribute('src', container.photo)
+  $media.setAttribute('id', container.id)
+  $mediaLeft.setAttribute('id', container.id)
+  $mediaBody.setAttribute('id', container.id)
+  $img.setAttribute('id', container.id)
+  $mediaHeading.setAttribute('id', container.id)
+  $itemPrice.setAttribute('id', container.id)
+  $buttonGroup.setAttribute('id', container.id)
+  $cartButton.setAttribute('id', container.id)
+  $detailsLink.setAttribute('id', container.id)
+  $itemDescription.setAttribute('id', container.id)
+  $detailsLink.setAttribute('href', '#')
+
+  $media.appendChild($mediaLeft)
+  $media.appendChild($mediaBody)
+  $mediaLeft.appendChild($a)
+  $a.appendChild($img)
+  $mediaBody.appendChild($mediaHeading)
+  $mediaBody.appendChild($itemDetails)
+  $mediaBody.appendChild($itemPrice)
+  $mediaBody.appendChild($buttonGroup)
+  $buttonGroup.appendChild($cartButton)
+
+  return $media
+*/
