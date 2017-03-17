@@ -64,16 +64,16 @@ items.forEach(function (item) {
 document.addEventListener('click', function() {
   var $clickedItem = event.target.id
 
-  function getMatches(item) {
+  function getMatches(allItems) {
     var $matches = []
-    allItems.forEach(function (items) {
-      if(items.id === $clickedItem) {
-      matches.push(items)
-    }
+    allItems.forEach(function (item) {
+      if(item.id === $clickedItem) {
+        $matches.push(item)
+      }
     })
-    console.log($matches)
+    return $matches
   }
-
+  console.log(getMatches(items))
 })
 
 
