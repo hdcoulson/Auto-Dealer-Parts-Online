@@ -85,7 +85,22 @@ document.addEventListener('click', function() {
   $detailsView.appendChild($matchedItem)
 
 })
+//begin cart code workspace
 
+//identify the item clicked from its button
+document.addEventListener ('click', function () {
+  var $cartButton = event.target.textContent
+  console.log($cartButton)
+})
+
+
+//create an array of the items added to the cart
+
+
+
+
+
+//end cart code workspace
 
 function renderSelectedItem (item) {
   var $media = document.createElement('div')
@@ -98,16 +113,14 @@ function renderSelectedItem (item) {
   var $itemPrice = document.createElement('span')
   var $itemButtonGroup = document.createElement('div')
   var $cartButton = document.createElement('button')
-  var $backButtonGroup = document.createElement('div')
-  var $backButton = document.createElement('button')
+  var $backLink = document.createElement('a')
 
   $mediaHeading.textContent = item.mediaHeading
   $itemDetails.textContent = item.itemDetails
   $itemPrice.textContent = item.itemPrice
   $itemButtonGroup.textContent = item.itemButtonGroup
   $cartButton.textContent = 'Add to cart'
-  $backButtonGroup.textContent = item.backButtonGroup
-  $backButton.textContent = 'Back'
+  $backLink.textContent = 'Back to list  '
 
   $media.classList.add('media')
   $mediaLeft.classList.add('media-left')
@@ -118,8 +131,7 @@ function renderSelectedItem (item) {
   $itemPrice.classList.add('price')
   $itemButtonGroup.classList.add('btn-group')
   $cartButton.classList.add('btnbtn-default')
-  $backButtonGroup.classList.add('btn-group')
-  $backButton.classList.add('btnbtn-default')
+  $backLink.classList.add('a')
 
   $img.setAttribute('src', item.photo)
   $media.setAttribute('id', item.id)
@@ -131,8 +143,8 @@ function renderSelectedItem (item) {
   $itemButtonGroup.setAttribute('id', item.id)
   $cartButton.setAttribute('id', item.id)
   $itemDetails.setAttribute('id', item.id)
-  $backButtonGroup.setAttribute('id', item.id)
-  $backButton.setAttribute('id', item.id)
+  $backLink.setAttribute('href', '#')
+  $backLink.setAttribute('id', item.id)
 
   $media.appendChild($mediaLeft)
   $media.appendChild($mediaBody)
@@ -142,9 +154,8 @@ function renderSelectedItem (item) {
   $mediaBody.appendChild($itemDetails)
   $mediaBody.appendChild($itemPrice)
   $mediaBody.appendChild($itemButtonGroup)
+  $itemButtonGroup.appendChild($backLink)
   $itemButtonGroup.appendChild($cartButton)
-  $mediaBody.appendChild($backButtonGroup)
-  $itemButtonGroup.appendChild($backButton)
 
   return $media
 }
