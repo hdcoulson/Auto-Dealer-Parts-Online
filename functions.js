@@ -69,7 +69,9 @@ document.addEventListener('click', function() {
     var $listView = document.querySelector('#listView.container')
     allItems.forEach(function (item) {
       if(item.id === $clickedItem) {
-        $listView.setAttribute('class', 'hidden')
+        if($listView !== null) {
+          $listView.setAttribute('class', 'hidden')
+        }
         $matches.push(item)
       }
     })
@@ -79,6 +81,7 @@ document.addEventListener('click', function() {
   var matches = getMatches(items)
   var $matchedItem = renderSelectedItem(matches[0])
   var $detailsView = document.querySelector('#detailsView')
+  $detailsView.innerHTML=''
   $detailsView.appendChild($matchedItem)
 
 })
@@ -93,14 +96,18 @@ function renderSelectedItem (item) {
   var $mediaHeading = document.createElement('h4')
   var $itemDetails = document.createElement('p')
   var $itemPrice = document.createElement('span')
-  var $buttonGroup = document.createElement('div')
+  var $itemButtonGroup = document.createElement('div')
   var $cartButton = document.createElement('button')
+  var $backButtonGroup = document.createElement('div')
+  var $backButton = document.createElement('button')
 
   $mediaHeading.textContent = item.mediaHeading
   $itemDetails.textContent = item.itemDetails
   $itemPrice.textContent = item.itemPrice
-  $buttonGroup.textContent = item.buttonGroup
+  $itemButtonGroup.textContent = item.itemButtonGroup
   $cartButton.textContent = 'Add to cart'
+  $backButtonGroup.textContent = item.backButtonGroup
+  $backButton.textContent = 'Back'
 
   $media.classList.add('media')
   $mediaLeft.classList.add('media-left')
@@ -109,8 +116,10 @@ function renderSelectedItem (item) {
   $mediaBody.classList.add('media-body', 'detailsView')
   $mediaHeading.classList.add('media-heading')
   $itemPrice.classList.add('price')
-  $buttonGroup.classList.add('btn-group')
+  $itemButtonGroup.classList.add('btn-group')
   $cartButton.classList.add('btnbtn-default')
+  $backButtonGroup.classList.add('btn-group')
+  $backButton.classList.add('btnbtn-default')
 
   $img.setAttribute('src', item.photo)
   $media.setAttribute('id', item.id)
@@ -119,9 +128,11 @@ function renderSelectedItem (item) {
   $img.setAttribute('id', item.id)
   $mediaHeading.setAttribute('id', item.id)
   $itemPrice.setAttribute('id', item.id)
-  $buttonGroup.setAttribute('id', item.id)
+  $itemButtonGroup.setAttribute('id', item.id)
   $cartButton.setAttribute('id', item.id)
   $itemDetails.setAttribute('id', item.id)
+  $backButtonGroup.setAttribute('id', item.id)
+  $backButton.setAttribute('id', item.id)
 
   $media.appendChild($mediaLeft)
   $media.appendChild($mediaBody)
@@ -130,8 +141,10 @@ function renderSelectedItem (item) {
   $mediaBody.appendChild($mediaHeading)
   $mediaBody.appendChild($itemDetails)
   $mediaBody.appendChild($itemPrice)
-  $mediaBody.appendChild($buttonGroup)
-  $buttonGroup.appendChild($cartButton)
+  $mediaBody.appendChild($itemButtonGroup)
+  $itemButtonGroup.appendChild($cartButton)
+  $mediaBody.appendChild($backButtonGroup)
+  $itemButtonGroup.appendChild($backButton)
 
   return $media
 }
