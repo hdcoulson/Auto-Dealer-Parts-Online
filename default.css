@@ -1,1 +1,35 @@
+.visible {
+  visibility: hidden;
+}
 
+body {
+  background: url('grey.png');
+  background-repeat: repeat;
+}
+
+.media-object {
+  border: solid 0.1em;
+  width: auto;
+  margin: 0.5em;
+  padding: 0.1em;
+  color: black;
+  box-shadow: 3px 3px red, -0.5em 0 0.4em black;
+}
+
+.listView {
+  border: solid 0.1em;
+  margin: 0.5em;
+  padding: 0.3em;
+}
+
+.detailsView {
+  border: solid 0.1em;
+  margin: 0.5em;
+  padding: 0.3em;
+  background-color: black;
+  color: white;
+}
+
+.btnbtn-default {
+  color: black;
+}
