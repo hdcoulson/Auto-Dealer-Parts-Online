@@ -66,11 +66,10 @@ document.addEventListener('click', function() {
 
   function getMatches(allItems) {
     var $matches = []
-    var $listView = document.querySelector('#listView')
+    var $listView = document.querySelector('#listView.container')
     allItems.forEach(function (item) {
       if(item.id === $clickedItem) {
-        //can I insert an instruction to setAttribute here?
-        $listView.setAttribute('hidden')
+        $listView.setAttribute('class', 'hidden')
         $matches.push(item)
       }
     })
