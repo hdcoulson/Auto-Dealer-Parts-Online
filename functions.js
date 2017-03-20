@@ -1,4 +1,4 @@
-function renderPost(container) {
+function renderList(container) {
   var $media = document.createElement('div')
   var $mediaLeft = document.createElement('div')
   var $a = document.createElement('a')
@@ -22,7 +22,7 @@ function renderPost(container) {
   $mediaLeft.classList.add('media-left')
   $a.classList.add('a')
   $img.classList.add('media-object')
-  $mediaBody.classList.add('media-body')
+  $mediaBody.classList.add('media-body', 'listView')
   $mediaHeading.classList.add('media-heading')
   $itemPrice.classList.add('price')
   $buttonGroup.classList.add('btn-group')
@@ -58,7 +58,7 @@ function renderPost(container) {
 
 items.forEach(function (item) {
   var $listView = document.querySelector('#listView')
-  $listView.appendChild(renderPost(item))
+  $listView.appendChild(renderList(item))
 })
 
 document.addEventListener('click', function() {
@@ -66,8 +66,11 @@ document.addEventListener('click', function() {
 
   function getMatches(allItems) {
     var $matches = []
+    var $listView = document.querySelector('#listView')
     allItems.forEach(function (item) {
       if(item.id === $clickedItem) {
+        //can I insert an instruction to setAttribute here?
+        $listView.setAttribute('hidden')
         $matches.push(item)
       }
     })
@@ -104,7 +107,7 @@ function renderSelectedItem (item) {
   $mediaLeft.classList.add('media-left')
   $a.classList.add('a')
   $img.classList.add('media-object')
-  $mediaBody.classList.add('media-body')
+  $mediaBody.classList.add('media-body', 'detailsView')
   $mediaHeading.classList.add('media-heading')
   $itemPrice.classList.add('price')
   $buttonGroup.classList.add('btn-group')
@@ -119,8 +122,7 @@ function renderSelectedItem (item) {
   $itemPrice.setAttribute('id', item.id)
   $buttonGroup.setAttribute('id', item.id)
   $cartButton.setAttribute('id', item.id)
-  $itemDescription.setAttribute('id', item.id)
-  $detailsLink.setAttribute('href', '#')
+  $itemDetails.setAttribute('id', item.id)
 
   $media.appendChild($mediaLeft)
   $media.appendChild($mediaBody)
