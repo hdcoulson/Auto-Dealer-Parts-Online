@@ -22,16 +22,16 @@ document.addEventListener('click', function() {
   $detailsView.appendChild($matchedItem)
 
 })
-
+//begin cart code workspace
 document.addEventListener ('click', function () {
-  var $cartButton = event.target.tagName //this returns "BUTTON"
-  var $buttonID = event.target.id //this returns ID of '1'
+  var $cartButton = event.target.tagName
 
   function getCartItems(allItems){
-    for(i = 0 ; i <items.length; i++){
-      if(item.id === $buttonID){
-        console.log('success')
-      }
-    }
-  }
+    var $cartItems = []
+    if($cartButton === 'BUTTON'){
+       for(i = 0 ; i <items.length; i++){
+         if(item.id === $buttonID){
+
+  $cartItems.push(item)
 })
+}
