@@ -24,17 +24,15 @@ document.addEventListener('click', function() {
 })
 //begin cart code workspace
 document.addEventListener ('click', function () {
-  var $cartButton = event.target.tagName
+  var $cartButton = event.target.tagName //button
 
-  function getCartItems(clickedItem){
-    var $cartItems = []
-    if($cartButton === 'BUTTON'){
-      if(item.id === $buttonID){
-       for(i = 0 ; i <items.length; i++){
-         cart[i]
-        }
-        $cartItems.push(item)
+  if($cartButton === 'BUTTON') {
+    var $buttonID = event.target.id
+    for(var i = 0; i < items.length; i++){
+      if(items[i].id === $buttonID){
+        cart.push(items[i])
       }
     }
+
   }
 })
