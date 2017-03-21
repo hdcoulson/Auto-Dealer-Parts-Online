@@ -26,14 +26,15 @@ document.addEventListener('click', function() {
 document.addEventListener ('click', function () {
   var $cartButton = event.target.tagName
 
-  function getCartItems(allItems){
+  function getCartItems(clickedItem){
     var $cartItems = []
     if($cartButton === 'BUTTON'){
       if(item.id === $buttonID){
        for(i = 0 ; i <items.length; i++){
-        })
+         cart[i]
+        }
         $cartItems.push(item)
       }
     }
   }
-}
+})
