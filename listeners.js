@@ -29,9 +29,11 @@ document.addEventListener ('click', function () {
   function getCartItems(allItems){
     var $cartItems = []
     if($cartButton === 'BUTTON'){
+      if(item.id === $buttonID){
        for(i = 0 ; i <items.length; i++){
-         if(item.id === $buttonID){
-
-  $cartItems.push(item)
-})
+        })
+        $cartItems.push(item)
+      }
+    }
+  }
 }
