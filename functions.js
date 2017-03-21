@@ -1,4 +1,4 @@
-function renderList(container) {
+function renderList(item) {
   var $media = document.createElement('div')
   var $mediaLeft = document.createElement('div')
   var $a = document.createElement('a')
@@ -11,10 +11,10 @@ function renderList(container) {
   var $detailsLink = document.createElement('a')
   var $cartButton = document.createElement('button')
 
-  $mediaHeading.textContent = container.mediaHeading
-  $itemDescription.textContent = container.itemDescription
-  $itemPrice.textContent = container.itemPrice
-  $buttonGroup.textContent = container.buttonGroup
+  $mediaHeading.textContent = item.mediaHeading
+  $itemDescription.textContent = item.itemDescription
+  $itemPrice.textContent = item.itemPrice
+  $buttonGroup.textContent = item.buttonGroup
   $cartButton.textContent = 'Add to cart'
   $detailsLink.textContent = 'Details...'
 
@@ -22,24 +22,24 @@ function renderList(container) {
   $mediaLeft.classList.add('media-left')
   $a.classList.add('a')
   $img.classList.add('media-object')
-  $mediaBody.classList.add('media-body', 'listView')
+  $mediaBody.classList.add('media-body', 'list-view')
   $mediaHeading.classList.add('media-heading')
   $itemPrice.classList.add('price')
   $buttonGroup.classList.add('btn-group')
   $cartButton.classList.add('btnbtn-default')
   $detailsLink.classList.add('a')
 
-  $img.setAttribute('src', container.photo)
-  $media.setAttribute('id', container.id)
-  $mediaLeft.setAttribute('id', container.id)
-  $mediaBody.setAttribute('id', container.id)
-  $img.setAttribute('id', container.id)
-  $mediaHeading.setAttribute('id', container.id)
-  $itemPrice.setAttribute('id', container.id)
-  $buttonGroup.setAttribute('id', container.id)
-  $cartButton.setAttribute('id', container.id)
-  $detailsLink.setAttribute('id', container.id)
-  $itemDescription.setAttribute('id', container.id)
+  $img.setAttribute('src', item.photo)
+  $media.setAttribute('id', item.id)
+  $mediaLeft.setAttribute('id', item.id)
+  $mediaBody.setAttribute('id', item.id)
+  $img.setAttribute('id', item.id)
+  $mediaHeading.setAttribute('id', item.id)
+  $itemPrice.setAttribute('id', item.id)
+  $buttonGroup.setAttribute('id', item.id)
+  $cartButton.setAttribute('id', item.id)
+  $detailsLink.setAttribute('id', item.id)
+  $itemDescription.setAttribute('id', item.id)
   $detailsLink.setAttribute('href', '#')
 
   $media.appendChild($mediaLeft)
@@ -57,7 +57,7 @@ function renderList(container) {
 }
 
 items.forEach(function (item) {
-  var $listView = document.querySelector('#listView')
+  var $listView = document.querySelector('#list-view')
   $listView.appendChild(renderList(item))
 })
 
@@ -66,7 +66,7 @@ document.addEventListener('click', function() {
 
   function getMatches(allItems) {
     var $matches = []
-    var $listView = document.querySelector('#listView.container')
+    var $listView = document.querySelector('#list-view.container')
     allItems.forEach(function (item) {
       if(item.id === $clickedItem) {
         if($listView !== null) {
@@ -80,7 +80,7 @@ document.addEventListener('click', function() {
 
   var matches = getMatches(items)
   var $matchedItem = renderSelectedItem(matches[0])
-  var $detailsView = document.querySelector('#detailsView')
+  var $detailsView = document.querySelector('#details-view')
   $detailsView.innerHTML=''
   $detailsView.appendChild($matchedItem)
 
@@ -102,7 +102,7 @@ document.addEventListener ('click', function () {
 
 //end cart code workspace
 
-function renderSelectedItem (item) {
+function renderSelectedItem(item) {
   var $media = document.createElement('div')
   var $mediaLeft = document.createElement('div')
   var $a = document.createElement('a')
@@ -126,7 +126,7 @@ function renderSelectedItem (item) {
   $mediaLeft.classList.add('media-left')
   $a.classList.add('a')
   $img.classList.add('media-object')
-  $mediaBody.classList.add('media-body', 'detailsView')
+  $mediaBody.classList.add('media-body', 'details-view')
   $mediaHeading.classList.add('media-heading')
   $itemPrice.classList.add('price')
   $itemButtonGroup.classList.add('btn-group')
