@@ -25,25 +25,21 @@ document.addEventListener('click', function() {
 
 document.addEventListener ('click', function () {
   var $addToCartButton = event.target.tagName
+  var cartTotal = document.getElementByID("cart-quantity-button").textContent
+  var cartLength = cart.length
 
   if($addToCartButton === 'BUTTON') {
     var $buttonID = event.target.id
     for(var i = 0; i < items.length; i++){
       if(items[i].id === $buttonID){
         cart.push(items[i])
+
+  if(cartTotal !== cartLength){}
+
+
+
       }
     }
-
   }
-
-  function updateCart(quantity){
-    var cartTotal = document.getElementByID("cart-quantity-button").textContent
-    var cartLength = cart.length
-    if(cartTotal < cartLength) {
-    }
-      return quantity
-    }
-
-
 
 })
