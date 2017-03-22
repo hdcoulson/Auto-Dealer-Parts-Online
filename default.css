@@ -37,3 +37,8 @@ body {
 .price {
   color: red;
 }
+
+.title {
+  color: black;
+  text-align: center;
+}

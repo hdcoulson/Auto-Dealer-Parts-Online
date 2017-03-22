@@ -90,7 +90,7 @@ function renderSelectedItem(item) {
   $itemPrice.classList.add('price')
   $itemButtonGroup.classList.add('btn-group')
   $cartButton.classList.add('btnbtn-default')
-  $backLink.classList.add('a')
+  $backLink.classList.add('a', 'back-link')
 
   $img.setAttribute('src', item.photo)
   $media.setAttribute('id', item.id)
@@ -115,6 +115,52 @@ function renderSelectedItem(item) {
   $mediaBody.appendChild($itemButtonGroup)
   $itemButtonGroup.appendChild($backLink)
   $itemButtonGroup.appendChild($cartButton)
+
+  return $media
+}
+
+function renderCart(item) {
+  var $media = document.createElement('div')
+  var $cartTitle = document.createElement('h1')
+  var $mediaLeft = document.createElement('div')
+  var $a = document.createElement('a')
+  var $img = document.createElement('img')
+  var $mediaBody = document.createElement('div')
+  var $mediaHeading = document.createElement('h4')
+  var $itemDetails = document.createElement('p')
+  var $itemPrice = document.createElement('span')
+
+  $cartTitle.textContent = 'SHOPPING CART'
+  $mediaHeading.textContent = item.mediaHeading
+  $itemDetails.textContent = item.itemDetails
+  $itemPrice.textContent = item.itemPrice
+
+  $media.classList.add('media')
+  $cartTitle.classList.add('media-heading', 'title')
+  $mediaLeft.classList.add('media-left')
+  $a.classList.add('a')
+  $img.classList.add('media-object')
+  $mediaBody.classList.add('media-body', 'cart-view')
+  $mediaHeading.classList.add('media-heading')
+  $itemPrice.classList.add('price')
+
+  $img.setAttribute('src', item.photo)
+  $media.setAttribute('id', item.id)
+  $cartTitle.setAttribute('id', item.id)
+  $mediaLeft.setAttribute('id', item.id)
+  $mediaBody.setAttribute('id', item.id)
+  $img.setAttribute('id', item.id)
+  $mediaHeading.setAttribute('id', item.id)
+  $itemPrice.setAttribute('id', item.id)
+
+  $media.appendChild($cartTitle)
+  $media.appendChild($mediaLeft)
+  $media.appendChild($mediaBody)
+  $mediaLeft.appendChild($a)
+  $a.appendChild($img)
+  $mediaBody.appendChild($mediaHeading)
+  $mediaBody.appendChild($itemDetails)
+  $mediaBody.appendChild($itemPrice)
 
   return $media
 }
