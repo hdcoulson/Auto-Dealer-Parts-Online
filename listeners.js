@@ -22,9 +22,9 @@ document.addEventListener('click', function() {
   $detailsView.appendChild($matchedItem)
 
 })
-//begin cart code workspace
+
 document.addEventListener ('click', function () {
-  var $cartButton = event.target.tagName //button
+  var $cartButton = event.target.tagName
 
   if($cartButton === 'BUTTON') {
     var $buttonID = event.target.id
