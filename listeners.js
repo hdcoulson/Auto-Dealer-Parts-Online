@@ -24,9 +24,9 @@ document.addEventListener('click', function() {
 })
 
 document.addEventListener ('click', function () {
-  var $cartButton = event.target.tagName
+  var $addToCartButton = event.target.tagName
 
-  if($cartButton === 'BUTTON') {
+  if($addToCartButton === 'BUTTON') {
     var $buttonID = event.target.id
     for(var i = 0; i < items.length; i++){
       if(items[i].id === $buttonID){
@@ -35,4 +35,15 @@ document.addEventListener ('click', function () {
     }
 
   }
+
+  function updateCart(quantity){
+    var cartTotal = document.getElementByID("cart-quantity-button").textContent
+    var cartLength = cart.length
+    if(cartTotal < cartLength) {
+    }
+      return quantity
+    }
+
+
+
 })
