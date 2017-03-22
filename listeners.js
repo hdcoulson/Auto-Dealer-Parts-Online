@@ -39,12 +39,10 @@ document.addEventListener ('click', function () {
     }
     }
 })
-//begin cart workspace
 
 document.addEventListener('click', function(){
-  var $clickedItem = event.target.id // = 'cart-quantity-button'
+  var $clickedItem = event.target.id
   var $detailsView = document.querySelector('#details-view')
-
 
   if($clickedItem === 'cart-quantity-button') {
     if($detailsView !== null) {
@@ -56,5 +54,3 @@ document.addEventListener('click', function(){
   $cartView.innerHTML=''
   $cartView.appendChild($cartItems)
 })
-
-//end cart workspace
