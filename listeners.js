@@ -56,33 +56,3 @@ document.addEventListener('click', function(){
     }
   }
 })
-
-//Checkout view - This needs content
-document.addEventListener('click', function (){
-  var $clickedItem = event.target.tagName
-  var $checkoutView = document.querySelector('#checkout-view')
-
-  if($clickedItem === 'checkout'){
-    $checkoutView.innerHTML=''
-    $checkoutView.appendChild
-
-  }
-})
-
-
-//Return to list View - this needs more work not to conflict with details view
-/*
-a.addEventListener('click', function () {
-  var $clickeditem = event.target.class
-
-  if($clickeditem === 'a'){
-    var $cartView = document.querySelector('#cart-view')
-    var $detailsView = document.querySelector('#details-view')
-    var $listView = document.querySelector('#list-view')
-    $detailsView.setAttribute('class', 'hidden')
-    $cartView.setAttribute('class', 'hidden')
-    $listView.setAttribute('class', 'container')
-  }
-
-})
-*/
