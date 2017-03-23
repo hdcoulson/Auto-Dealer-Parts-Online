@@ -133,12 +133,17 @@ function renderCart(item) {
   var $itemDetails = document.createElement('p')
   var $itemPrice = document.createElement('span')
   var $cartTotalTitle = document.createElement('div')
+  var $cartTotal = document.createElement('div')
+  var $buttonGroup = document.createElement('div')
+  var $checkoutButton = document.createElement('button')
 
   $cartTitle.textContent = 'SHOPPING CART'
   $mediaHeading.textContent = item.mediaHeading
   $itemDetails.textContent = item.itemDetails
   $itemPrice.textContent = toMoney(item.itemPrice)
   $cartTotalTitle.textContent = 'CART TOTAL'
+  $cartTotal.textContent = toMoney(cartTotal(cart))
+  $checkoutButton.textContent = 'CHECKOUT'
 
   $media.classList.add('media')
   $cartTitle.classList.add('media-heading', 'title')
@@ -148,8 +153,10 @@ function renderCart(item) {
   $mediaBody.classList.add('media-body', 'cart-view')
   $mediaHeading.classList.add('media-heading')
   $itemPrice.classList.add('price')
-  $cartTotalTitle.classList.add('btnbtn-default', 'cart-total')
-
+  $cartTotalTitle.classList.add('btnbtn-default', 'cart-total-title')
+  $cartTotal.classList.add('btnbtn-default', 'cart-total')
+  $buttonGroup.classList.add('btn-group')
+  $checkoutButton.classList.add('btnbtn-default')
 
   $img.setAttribute('src', item.photo)
   $media.setAttribute('id', item.id)
@@ -160,6 +167,9 @@ function renderCart(item) {
   $mediaHeading.setAttribute('id', item.id)
   $itemPrice.setAttribute('id', item.id)
   $cartTotalTitle.setAttribute('id', item.id)
+  $cartTotal.setAttribute('id', item.id)
+  $buttonGroup.setAttribute('id', item.id)
+  $checkoutButton.setAttribute('id', item.id)
 
   $media.appendChild($cartTitle)
   $media.appendChild($mediaLeft)
@@ -170,11 +180,14 @@ function renderCart(item) {
   $mediaBody.appendChild($itemDetails)
   $mediaBody.appendChild($itemPrice)
   $mediaBody.appendChild($cartTotalTitle)
+  $mediaBody.appendChild($cartTotal)
+  $mediaBody.appendChild($buttonGroup)
+  $mediaBody.appendChild($checkoutButton)
 
   return $media
 }
 
-//Formats prices
+//Formats a price
 function toMoney(number){
   var price = '$' + number.toFixed(2) + ' '
   return price
@@ -186,6 +199,5 @@ function cartTotal(cart) {
   for(var i = 0; i < cart.length; i++){
       total = cart[i].itemPrice + total
   }
-
   return total
 }

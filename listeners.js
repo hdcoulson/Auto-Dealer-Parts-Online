@@ -1,4 +1,4 @@
-//List View
+//Details View
 document.addEventListener('click', function() {
   var $clickedItem = event.target.id
 
@@ -55,4 +55,20 @@ document.addEventListener('click', function(){
       $detailsView.setAttribute('class', 'hidden')
     }
   }
+})
+
+//Return to list View
+
+a.addEventListener('click', function () {
+  var $clickeditem = event.target.class
+
+  if($clickeditem === 'a'){
+    var $cartView = document.querySelector('#cart-view')
+    var $detailsView = document.querySelector('#details-view')
+    var $listView = document.querySelector('#list-view')
+    $detailsView.setAttribute('class', 'hidden')
+    $cartView.setAttribute('class', 'hidden')
+    $listView.setAttribute('class', 'container')
+  }
+
 })
