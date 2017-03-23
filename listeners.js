@@ -1,10 +1,10 @@
+//List View
 document.addEventListener('click', function() {
   var $clickedItem = event.target.id
 
   function getMatches(allItems) {
     var $matches = []
     var $listView = document.querySelector('#list-view.container')
-    var $cartView = document.querySelector('#cart-view')
     allItems.forEach(function (item) {
       if(item.id === $clickedItem) {
         if($listView !== null) {
@@ -24,6 +24,7 @@ document.addEventListener('click', function() {
 
 })
 
+//Cart Quantity Button
 document.addEventListener ('click', function () {
   var $addToCartButton = event.target.tagName
   var cartTotal = document.getElementById("cart-quantity-button")
@@ -40,17 +41,18 @@ document.addEventListener ('click', function () {
     }
 })
 
+//Cart View
 document.addEventListener('click', function(){
   var $clickedItem = event.target.id
   var $detailsView = document.querySelector('#details-view')
 
   if($clickedItem === 'cart-quantity-button') {
     if($detailsView !== null) {
+      var $cartItems = renderCart(cart[0])
+      var $cartView = document.querySelector('#cart-view')
+      $cartView.innerHTML=''
+      $cartView.appendChild($cartItems)
       $detailsView.setAttribute('class', 'hidden')
     }
   }
-  var $cartItems = renderCart(cart[0])
-  var $cartView = document.querySelector('#cart-view')
-  $cartView.innerHTML=''
-  $cartView.appendChild($cartItems)
 })
