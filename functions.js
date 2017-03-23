@@ -1,3 +1,4 @@
+//List Page View
 function renderList(item) {
   var $media = document.createElement('div')
   var $mediaLeft = document.createElement('div')
@@ -13,10 +14,10 @@ function renderList(item) {
 
   $mediaHeading.textContent = item.mediaHeading
   $itemDescription.textContent = item.itemDescription
-  $itemPrice.textContent = item.itemPrice
+  $itemPrice.textContent = toMoney(item.itemPrice)
   $buttonGroup.textContent = item.buttonGroup
   $cartButton.textContent = 'Add to cart'
-  $detailsLink.textContent = 'Details...'
+  $detailsLink.textContent = 'Details...' + '  '
 
   $media.classList.add('media')
   $mediaLeft.classList.add('media-left')
@@ -61,6 +62,8 @@ items.forEach(function (item) {
   $listView.appendChild(renderList(item))
 })
 
+
+//Details Page View
 function renderSelectedItem(item) {
   var $media = document.createElement('div')
   var $mediaLeft = document.createElement('div')
@@ -76,7 +79,7 @@ function renderSelectedItem(item) {
 
   $mediaHeading.textContent = item.mediaHeading
   $itemDetails.textContent = item.itemDetails
-  $itemPrice.textContent = item.itemPrice
+  $itemPrice.textContent = toMoney(item.itemPrice)
   $itemButtonGroup.textContent = item.itemButtonGroup
   $cartButton.textContent = 'Add to cart'
   $backLink.textContent = 'Back to list  '
@@ -118,7 +121,7 @@ function renderSelectedItem(item) {
 
   return $media
 }
-
+//Shopping Cart View
 function renderCart(item) {
   var $media = document.createElement('div')
   var $cartTitle = document.createElement('h1')
@@ -129,11 +132,13 @@ function renderCart(item) {
   var $mediaHeading = document.createElement('h4')
   var $itemDetails = document.createElement('p')
   var $itemPrice = document.createElement('span')
+  var $cartTotalTitle = document.createElement('div')
 
   $cartTitle.textContent = 'SHOPPING CART'
   $mediaHeading.textContent = item.mediaHeading
   $itemDetails.textContent = item.itemDetails
-  $itemPrice.textContent = item.itemPrice
+  $itemPrice.textContent = toMoney(item.itemPrice)
+  $cartTotalTitle.textContent = 'CART TOTAL'
 
   $media.classList.add('media')
   $cartTitle.classList.add('media-heading', 'title')
@@ -143,6 +148,8 @@ function renderCart(item) {
   $mediaBody.classList.add('media-body', 'cart-view')
   $mediaHeading.classList.add('media-heading')
   $itemPrice.classList.add('price')
+  $cartTotalTitle.classList.add('btnbtn-default', 'cart-total')
+
 
   $img.setAttribute('src', item.photo)
   $media.setAttribute('id', item.id)
@@ -152,6 +159,7 @@ function renderCart(item) {
   $img.setAttribute('id', item.id)
   $mediaHeading.setAttribute('id', item.id)
   $itemPrice.setAttribute('id', item.id)
+  $cartTotalTitle.setAttribute('id', item.id)
 
   $media.appendChild($cartTitle)
   $media.appendChild($mediaLeft)
@@ -161,6 +169,23 @@ function renderCart(item) {
   $mediaBody.appendChild($mediaHeading)
   $mediaBody.appendChild($itemDetails)
   $mediaBody.appendChild($itemPrice)
+  $mediaBody.appendChild($cartTotalTitle)
 
   return $media
+}
+
+//Formats prices
+function toMoney(number){
+  var price = '$' + number.toFixed(2) + ' '
+  return price
+}
+
+//Cart Total
+function cartTotal(cart) {
+  var total = 0
+  for(var i = 0; i < cart.length; i++){
+      total = cart[i].itemPrice + total
+  }
+
+  return total
 }

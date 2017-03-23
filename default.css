@@ -37,9 +37,14 @@ body {
 
 .price {
   color: red;
+  font-size: 16px;
 }
 
 .title {
   color: black;
   text-align: center;
+}
+
+.cart-total {
+  font-weight: 700;
 }
