@@ -169,7 +169,7 @@ function renderCart(item) {
   $cartTotalTitle.setAttribute('id', item.id)
   $cartTotal.setAttribute('id', item.id)
   $buttonGroup.setAttribute('id', item.id)
-  $checkoutButton.setAttribute('id', item.id)
+  $checkoutButton.setAttribute('id', 'checkout')
 
   $media.appendChild($cartTitle)
   $media.appendChild($mediaLeft)
@@ -186,6 +186,12 @@ function renderCart(item) {
 
   return $media
 }
+
+//Checkout view - This needs content
+function checkout(item){
+
+}
+
 
 //Formats a price
 function toMoney(number){

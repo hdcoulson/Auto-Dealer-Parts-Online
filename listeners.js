@@ -57,6 +57,19 @@ document.addEventListener('click', function(){
   }
 })
 
+//Checkout view - This needs content
+document.addEventListener('click', function (){
+  var $clickedItem = event.target.tagName
+  var $checkoutView = document.querySelector('#checkout-view')
+
+  if($clickedItem === 'checkout'){
+    $checkoutView.innerHTML=''
+    $checkoutView.appendChild
+
+  }
+})
+
+
 //Return to list View - this needs more work not to conflict with details view
 /*
 a.addEventListener('click', function () {
