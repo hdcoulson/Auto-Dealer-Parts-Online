@@ -57,8 +57,8 @@ document.addEventListener('click', function(){
   }
 })
 
-//Return to list View
-
+//Return to list View - this needs more work not to conflict with details view
+/*
 a.addEventListener('click', function () {
   var $clickeditem = event.target.class
 
@@ -72,3 +72,4 @@ a.addEventListener('click', function () {
   }
 
 })
+*/
