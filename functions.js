@@ -27,8 +27,8 @@ function renderList(item) {
   $mediaHeading.classList.add('media-heading')
   $itemPrice.classList.add('price')
   $buttonGroup.classList.add('btn-group')
-  $cartButton.classList.add('btnbtn-default')
-  $detailsLink.classList.add('a')
+  $cartButton.classList.add('btnbtn-default', 'add-to-cart')
+  $detailsLink.classList.add('details')
 
   $img.setAttribute('src', item.photo)
   $media.setAttribute('id', item.id)
@@ -92,8 +92,8 @@ function renderSelectedItem(item) {
   $mediaHeading.classList.add('media-heading')
   $itemPrice.classList.add('price')
   $itemButtonGroup.classList.add('btn-group')
-  $cartButton.classList.add('btnbtn-default')
-  $backLink.classList.add('a', 'back-link')
+  $cartButton.classList.add('btnbtn-default', 'add-to-cart')
+  $backLink.classList.add('back-link')
 
   $img.setAttribute('src', item.photo)
   $media.setAttribute('id', item.id)
@@ -106,7 +106,7 @@ function renderSelectedItem(item) {
   $cartButton.setAttribute('id', item.id)
   $itemDetails.setAttribute('id', item.id)
   $backLink.setAttribute('href', '#')
-  $backLink.setAttribute('id', item.id)
+  $backLink.setAttribute('id', 'back-link')
 
   $media.appendChild($mediaLeft)
   $media.appendChild($mediaBody)
@@ -156,7 +156,7 @@ function renderCart(item) {
   $cartTotalTitle.classList.add('btnbtn-default', 'cart-total-title')
   $cartTotal.classList.add('btnbtn-default', 'cart-total')
   $buttonGroup.classList.add('btn-group')
-  $checkoutButton.classList.add('btnbtn-default')
+  $checkoutButton.classList.add('btnbtn-default', 'checkout-button')
 
   $img.setAttribute('src', item.photo)
   $media.setAttribute('id', item.id)
@@ -240,7 +240,7 @@ function viewSwitch(view){
   var $detailsClass = document.querySelector('#details-view').getAttribute('class')
   var $checkoutClass = document.querySelector('#checkout-view').getAttribute('class')
   var $cartClass = document.querySelector('#cart-view').getAttribute('class')
-  var $listView = document.querySelector('#list-view.container')
+  var $listView = document.querySelector('#list-view')
   var $checkoutView = document.querySelector('#checkout-view')
   var $detailsView = document.querySelector('#details-view')
   var $cartView = document.querySelector('#cart-view')
