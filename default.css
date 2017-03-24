@@ -2,11 +2,6 @@
   visibility: hidden;
 }
 
-body {
-  background: url('grey.png');
-  background-repeat: repeat;
-}
-
 .media-object {
   border: solid 0.1em;
   width: auto;
@@ -32,4 +27,19 @@ body {
 
 .btnbtn-default {
   color: black;
+  text-align: right;
+}
+
+.price {
+  color: red;
+  font-size: 16px;
+}
+
+.title {
+  color: black;
+  text-align: center;
+}
+
+.cart-total-title {
+  font-weight: 700;
 }
