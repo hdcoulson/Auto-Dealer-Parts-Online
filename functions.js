@@ -187,9 +187,36 @@ function renderCart(item) {
   return $media
 }
 
-//Checkout view - This needs content
-function checkout(item){
+//Checkout view
+function renderCheckout(item){
+  var $media = document.createElement('div')
+  var $checkoutTitle = document.createElement('h1')
+  var $rowDiv = document.createElement('div')
+  var $leftDiv = document.createElement('div')
+  var $firstName = document.createElement('div')
+  var $rightDiv = document.createElement('div')
+  var $lastName = document.createElement('div')
 
+  $checkoutTitle.textContent = 'CHECKOUT'
+  $firstName.textContent = 'first name'
+  $lastName.textContent = 'last name'
+
+  $media.classList.add('media')
+  $checkoutTitle.classList.add('media-heading', 'title')
+  $rowDiv.classList.add('col-xs-12')
+  $leftDiv.classList.add('col-xs-3')
+  $firstName.classList.add('col-xs-6')
+  $rightDiv.classList.add('col-xs-3')
+  $lastName.classList.add('col-xs-6')
+
+  $media.appendChild($checkoutTitle)
+  $media.appendChild($rowDiv)
+  $media.appendChild($leftDiv)
+  $media.appendChild($firstName)
+  $media.appendChild($rightDiv)
+  $media.appendChild($lastName)
+
+  return $media
 }
 
 
