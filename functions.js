@@ -246,14 +246,17 @@ function viewSwitch(view){
   var $cartView = document.querySelector('#cart-view')
 
     if($detailsClass === 'container') {
+      var $listView = document.querySelector('#list-view.container')
       $detailsView.setAttribute('class', 'hidden')
       $listView.setAttribute('class', 'container')
     }
     if($cartClass === 'container') {
+      var $listView = document.querySelector('#list-view.container')
       $cartView.setAttribute('class', 'hidden')
       $listView.setAttribute('class', 'container')
     }
     if($checkoutClass === 'container') {
+      var $listView = document.querySelector('#list-view.container')
       $checkoutView.setAttribute('class', 'hidden')
       $listView.setAttribute('class', 'container')
     }
