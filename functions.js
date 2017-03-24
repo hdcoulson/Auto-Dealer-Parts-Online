@@ -234,3 +234,27 @@ function cartTotal(cart) {
   }
   return total
 }
+
+//View switcher
+function viewSwitch(view){
+  var $detailsClass = document.querySelector('#details-view').getAttribute('class')
+  var $checkoutClass = document.querySelector('#checkout-view').getAttribute('class')
+  var $cartClass = document.querySelector('#cart-view').getAttribute('class')
+  var $listView = document.querySelector('#list-view.container')
+  var $checkoutView = document.querySelector('#checkout-view')
+  var $detailsView = document.querySelector('#details-view')
+  var $cartView = document.querySelector('#cart-view')
+
+    if($detailsClass === 'container') {
+      $detailsView.setAttribute('class', 'hidden')
+      $listView.setAttribute('class', 'container')
+    }
+    if($cartClass === 'container') {
+      $cartView.setAttribute('class', 'hidden')
+      $listView.setAttribute('class', 'container')
+    }
+    if($checkoutClass === 'container') {
+      $checkoutView.setAttribute('class', 'hidden')
+      $listView.setAttribute('class', 'container')
+    }
+}
