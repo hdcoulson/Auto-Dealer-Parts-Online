@@ -25,15 +25,16 @@ document.addEventListener('click', function() {
 })
 
 document.addEventListener ('click', function () {
-  var $addToCartButton = event.target.tagName
+  var $clickedItemTagName = event.target.tagName
   var cartTotal = document.getElementById("cart-quantity-button")
   var cartLength = cart.length
   var $clickedItemId = event.target.id
   var $detailsView = document.querySelector('#details-view')
   var $checkoutView = document.querySelector('#checkout-view')
   var $cartView = document.querySelector('#cart-view')
+  var $backlink = document.querySelector('#back-link')
 
-  if($addToCartButton === 'BUTTON') {
+  if($clickedItemTagName === 'BUTTON') {
     var $buttonID = event.target.id
     for(var i = 0; i < items.length; i++){
       if(items[i].id === $buttonID){
@@ -59,5 +60,9 @@ document.addEventListener ('click', function () {
         $checkoutView.appendChild($checkout)
         $cartView.setAttribute('class', 'hidden')
       }
+  else if($clickedItemId === 'back-link'){
+        viewSwitch()
+      }
+
     }
 })

@@ -93,7 +93,7 @@ function renderSelectedItem(item) {
   $itemPrice.classList.add('price')
   $itemButtonGroup.classList.add('btn-group')
   $cartButton.classList.add('btnbtn-default')
-  $backLink.classList.add('a', 'back-link')
+  $backLink.classList.add('back-link')
 
   $img.setAttribute('src', item.photo)
   $media.setAttribute('id', item.id)
@@ -106,7 +106,7 @@ function renderSelectedItem(item) {
   $cartButton.setAttribute('id', item.id)
   $itemDetails.setAttribute('id', item.id)
   $backLink.setAttribute('href', '#')
-  $backLink.setAttribute('id', item.id)
+  $backLink.setAttribute('id', 'back-link')
 
   $media.appendChild($mediaLeft)
   $media.appendChild($mediaBody)
@@ -240,23 +240,20 @@ function viewSwitch(view){
   var $detailsClass = document.querySelector('#details-view').getAttribute('class')
   var $checkoutClass = document.querySelector('#checkout-view').getAttribute('class')
   var $cartClass = document.querySelector('#cart-view').getAttribute('class')
-  var $listView = document.querySelector('#list-view.container')
+  var $listView = document.querySelector('#list-view')
   var $checkoutView = document.querySelector('#checkout-view')
   var $detailsView = document.querySelector('#details-view')
   var $cartView = document.querySelector('#cart-view')
 
     if($detailsClass === 'container') {
-      var $listView = document.querySelector('#list-view.container')
       $detailsView.setAttribute('class', 'hidden')
       $listView.setAttribute('class', 'container')
     }
     if($cartClass === 'container') {
-      var $listView = document.querySelector('#list-view.container')
       $cartView.setAttribute('class', 'hidden')
       $listView.setAttribute('class', 'container')
     }
     if($checkoutClass === 'container') {
-      var $listView = document.querySelector('#list-view.container')
       $checkoutView.setAttribute('class', 'hidden')
       $listView.setAttribute('class', 'container')
     }
