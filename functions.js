@@ -27,8 +27,8 @@ function renderList(item) {
   $mediaHeading.classList.add('media-heading')
   $itemPrice.classList.add('price')
   $buttonGroup.classList.add('btn-group')
-  $cartButton.classList.add('btnbtn-default')
-  $detailsLink.classList.add('a')
+  $cartButton.classList.add('btnbtn-default', 'add-to-cart')
+  $detailsLink.classList.add('details')
 
   $img.setAttribute('src', item.photo)
   $media.setAttribute('id', item.id)
@@ -92,7 +92,7 @@ function renderSelectedItem(item) {
   $mediaHeading.classList.add('media-heading')
   $itemPrice.classList.add('price')
   $itemButtonGroup.classList.add('btn-group')
-  $cartButton.classList.add('btnbtn-default')
+  $cartButton.classList.add('btnbtn-default', 'add-to-cart')
   $backLink.classList.add('back-link')
 
   $img.setAttribute('src', item.photo)
@@ -156,7 +156,7 @@ function renderCart(item) {
   $cartTotalTitle.classList.add('btnbtn-default', 'cart-total-title')
   $cartTotal.classList.add('btnbtn-default', 'cart-total')
   $buttonGroup.classList.add('btn-group')
-  $checkoutButton.classList.add('btnbtn-default')
+  $checkoutButton.classList.add('btnbtn-default', 'checkout-button')
 
   $img.setAttribute('src', item.photo)
   $media.setAttribute('id', item.id)
