@@ -2,11 +2,6 @@
   visibility: hidden;
 }
 
-body {
-  background: url('grey.png');
-  background-repeat: repeat;
-}
-
 .media-object {
   border: solid 0.1em;
   width: auto;

@@ -60,6 +60,4 @@ document.addEventListener ('click', function () {
         $cartView.setAttribute('class', 'hidden')
       }
     }
-
-
 })
